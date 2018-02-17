@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="panel-image">
+      <img src="{{userinput.photoUrl}}" alt="{{userinput.knownAs}}">
+      <ul class="list-inline member-icons animate text-center">
+        <li><button class="btn btn-primary" [routerLink]="['/members/', userinput.id]"><i class="fa fa-user"></i></button></li>
+        <li><button class="btn btn-primary"><i class="fa fa-heart"></i></button></li>
+        <li><button class="btn btn-primary"><i class="fa fa-envelope"></i></button></li>
+      </ul>
+    </div>
+    <div class="text-center">
+      <h5>
+        <i class="fa fa-user"></i>{{userinput.knownAs}},{{userinput.age}}</h5>
+    </div>
+    <div class="text-center">
+      <h5>
+        <small>{{userinput.city}}</small>
+      </h5>
+    </div>
+  </div>
+</div>
