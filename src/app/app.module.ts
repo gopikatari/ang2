@@ -24,6 +24,9 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './route';
 import { AuthModule } from './auth/auth.module';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolvers';
+import { PreventUnsavedChanges } from './_guard/preventunsavedchanges.guard';
 
 
 
@@ -40,7 +43,8 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
     ListsComponent,
     MessagesComponent,
     MemberCardComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MemberEditComponent
 ],
   imports: [
     BrowserModule,
@@ -58,7 +62,9 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
     AuthGuard,
     UserService,
     MemberDetailResolver,
-    MemberListResolver
+    MemberListResolver,
+    MemberEditResolver,
+    PreventUnsavedChanges
   ],
   bootstrap: [AppComponent]
 })

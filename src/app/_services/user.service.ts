@@ -1,5 +1,5 @@
 
-import { Http,HttpModule, Headers, RequestOptions } from '@angular/http';
+import { Http, HttpModule, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './../../environments/environment';
 import 'rxjs/add/operator/map';
@@ -15,20 +15,21 @@ export class UserService {
     private baseUrl = environment.apiUrl;
     constructor(private authhttp: AuthHttp) {
     }
-    getUsers(): Observable<User[]> 
-    {
+    getUsers(): Observable<User[]> {
         return this.authhttp.get(this.baseUrl + 'users/GetUsers')
             .map(response => <User[]>response.json())
             .catch(this.handleError);
     }
 
-    getUser(id): Observable<User> 
-    {
-        return this.authhttp.get(this.baseUrl + 'users/GetUser/'+id)
+    getUser(id): Observable<User> {
+        return this.authhttp.get(this.baseUrl + 'users/GetUser/' + id)
             .map(response => <User>response.json())
             .catch(this.handleError);
     }
 
+    updateUser(id: number, user: User) {
+        return this.authhttp.put(this.baseUrl + 'users/1UpdateUser/' + id, user).catch(this.handleError);
+    }
 
     // private jwt() {
     //     let token = localStorage.getItem('token');

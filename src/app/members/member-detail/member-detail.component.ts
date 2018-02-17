@@ -40,7 +40,7 @@ export class MemberDetailComponent implements OnInit {
     
   }
 
-  getImages(){
+  getImages(){  
     const ImageUrls=[];
     for (let i = 0; i < this.user.photos.length ; i++) {
       ImageUrls.push({
