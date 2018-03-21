@@ -28,7 +28,7 @@ export class UserService {
     }
 
     updateUser(id: number, user: User) {
-        return this.authhttp.put(this.baseUrl + 'users/1UpdateUser/' + id, user).catch(this.handleError);
+        return this.authhttp.put(this.baseUrl + 'users/UpdateUser/' + id, user).catch(this.handleError);
     }
 
     // private jwt() {
